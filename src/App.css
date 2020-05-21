@@ -1,38 +1,168 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+  margin: 0;
+  width: calc(100vw);
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 72px;
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.home-button {
+  max-height: 32px;
+  width: 40vw;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-list{
+  display: flex;
+  flex-basis: auto;
+  list-style: none;
+  color: white;
+  justify-content: space-between;
+}
+
+.nav-list li {
+  margin-right: 1rem;
+  font: .95rem "Montserrat" -apple-system;
+  color: white;
+  letter-spacing: .0625em;
+}
+
+.nav-list li:hover {
+color: #fed136;
+}
+
+.header {
+  z-index: 1;
+  height: 745px;
+  width: 100%;
+  background-image: url("https://blackrockdigital.github.io/startbootstrap-agency/assets/img/header-bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  padding: 17rem 0px 12.5rem;
+  overflow: hidden;
+
+}
+
+.header-container{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#txt1 {
+  font-size: 36px;
+  padding-bottom: 32px;
+  font-style: italic;
+  font-family: Droid Serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#txt2 {
+  font-size: 72px;
+  padding-bottom: 64px;
+  font-weight: bold;
+}
+
+.tmm{
+  width: 224px;
+  height: 69px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Montserrat";
+}
+
+.button-yellow{color: white;
+background-color: rgb(254,209,54);
+border: none;
+border-radius: 5px;
+}
+
+.menu-btn {
+  z-index: 11;
+  display: none;
+  text-align: center;
+  align-items: flex-start;
+  overflow: visible;
+  padding: 12px;
+  position: fixed;
+  right: 15px;
+  top: 16.5px;
+}
+
+#ham {
+  padding-top: 1px;
+  height: 12px;
+  width: 12px;
+}
+
+@media (max-width: 992px){
+.nav{
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: rgb(33,37,41);
+}
+
+.home-button {
+  margin-left: 15px;
+}
+
+.header{
+  padding: 10.5rem 0 6rem;
+  text-align: center;
+  height: 518px;
+  line-height: 3.25rem;
+}
+
+#txt1 {
+  font-size: 24px;
+  padding: 0;
+  margin: 0 0 25px;
+}
+
+#txt2 {
+  padding: 0;
+  margin: 0 0 32px;
+  font-size: 52px;
+}
+
+  .menu-btn{
+    display: flex;
   }
-  to {
-    transform: rotate(360deg);
+  .nav-list{
+    margin-block-start: 0;
+    position: absolute;
+    top: 56px;
+    background-color: rgb(33,37,41);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 15px;
+    height: 0;
+    width: 100vw;
+    overflow: hidden;
+    transition: all 1000ms;
+  }
+
+  .nav-list-opened{
+    height: 206px;
+  }
+
+  .nav-list-opened li{
+    padding: 8px 0;
   }
 }
